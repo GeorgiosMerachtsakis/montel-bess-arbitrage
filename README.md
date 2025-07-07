@@ -27,7 +27,7 @@ This assignment explores the economic potential of battery energy storage system
 
 ## Data Sources
 
-All input data and assignment description are located in data_sources/:
+All input data and assignment description are located in [`data/`](./data) and [`doc/`](./doc):
 - elspotprices_19to21.csv: Hourly day-ahead electricity prices for DK price zones
 - Assignment_Description.pdf: Problem statement and task overview
 
