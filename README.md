@@ -1,40 +1,41 @@
+bess-arbitrage-model
+Battery energy storage system (BESS) arbitrage simulation and optimization in Python.
 
-# 🔋 Montel – Battery Arbitrage Strategy
+This repository was developed as part of a university assignment focused on modeling battery storage operation in electricity markets using Python and Pyomo. The model simulates day-ahead bidding of a 1 MW / 2 MWh battery system based on hourly price signals.
 
-This repository contains a Python implementation for simulating the **bidding strategy of a battery system** in an electricity market. The work was completed as part of the course _31762 – Introduction to Energy Analytics_ at DTU.
+## Repository Structure
+├── BESS_arbitrage_model.py
+├── elspotprices_19to21.csv
+├── data_sources/
+│   └── Assignment_Description.pdf
+└── README.md
 
----
+## Assignment:Battery Arbitrage Modeling
+This assignment explores the economic potential of battery energy storage systems by implementing a simple daily arbitrage strategy. The model determines the optimal charging and discharging profile for a fixed-size battery, using historical spot market prices in Denmark.
 
-## 📌 Assignment Overview
+## Model Description
 
-The objective of the project is to model the optimal charge/discharge behavior of a battery system participating in a day-ahead electricity market. The optimization considers:
+- A 1 MW / 2 MWh battery is operated in a single price area (e.g., DK2)
 
-- Battery technical constraints (state-of-charge, capacity, efficiency)
-- Forecasted market prices
-- Arbitrage opportunities
-- Economic performance (profit maximization)
+- Charging and discharging decisions are optimized for each day separately
 
-The model was developed in Python using linear programming with the `PuLP` package.
+- The battery must return to its original state of charge by the end of each day
 
----
+- Optional roundtrip efficiency losses are included in the simulation
 
-## 📁 Files
+- Optimization is formulated and solved using Pyomo and the GLPK solver
 
-| File | Description |
-|------|-------------|
-| `battery_bidding_strategy.py` | Main optimization script |
-| `docs/Assignment_BESS.pdf` | Assignment instructions and scenario details |
+## Data Sources
 
----
+All input data and assignment description are located in data_sources/:
+- elspotprices_19to21.csv: Hourly day-ahead electricity prices for DK price zones
+- Assignment_Description.pdf: Problem statement and task overview
 
-## 🛠 Requirements
+## Requirements
 
-- Python 3.7+
-- `pulp`
-- `pandas`
-- `matplotlib` (for optional plotting)
-
-Install dependencies with:
-
-```bash
-pip install pulp pandas matplotlib
+-Python ≥ 3.7
+-pandas
+-numpy
+-matplotlib
+-pyomo
+-glpk (as external solver)
