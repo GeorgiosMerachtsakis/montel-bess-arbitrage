@@ -6,10 +6,14 @@ import matplotlib as mpl
 mpl.rcParams.update(mpl.rcParamsDefault)
 from datetime import date, timedelta
 import datetime
+import os
 
-#%%
+
+
 # DATA IMPORT
-raw_data = pd.read_csv('elspotprices_19to21.csv')
+
+raw_data = pd.read_csv('data/elspotprices_19to21.csv')
+
 
 #DATA PREPARATION
 elspot = raw_data[['HourUTC', 'PriceArea', 'SpotPriceEUR']]
